@@ -1,0 +1,7 @@
+yoil = ["월", "화", "수", "목", "금"]
+foods = ["갈비탕", "순대국", "피자", "햄버거", "라면"]
+
+menu = zip(yoil, foods)
+
+for y, f in menu :
+    print("%s요일 메뉴 : %s" % (y, f))

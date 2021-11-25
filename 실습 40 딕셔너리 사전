@@ -1,0 +1,12 @@
+#사전1
+dic = {"boy":"소년", "school":"학교", "book":"책"}
+print(dic)
+
+print(dic["boy"])
+print(dic["school"])
+
+#사전2
+dic = {"one":"하나", "two":"둘", "three":"셋","four":"넷", "five":"다섯", "six":"여섯", "seven":"일곱", "eight":"여덞", "nine":"아홉", "ten":"열"}
+
+print(dic[input("영단어를 입력하세요 : ")])
+

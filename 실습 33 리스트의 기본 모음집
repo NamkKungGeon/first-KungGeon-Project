@@ -1,0 +1,27 @@
+mylist = [30, 10, 20]
+print("현재 리스트 : %s" %mylist)
+
+mylist.append(40)
+print("append(40) 후의 리스트 : %s" %mylist)
+
+mylist.pop(1)
+print("pop(1) 후의 리스트 : %s" %mylist)
+
+mylist.sort()
+print("sort 후의 리스트 : %s" %mylist)
+
+mylist.reverse()
+print("reverse 후의 리스트 : %s" %mylist)
+
+print("index(20)을 통해 요소 20의 위치 : %d" %mylist.index(20))
+
+mylist.insert(0, 50)
+print("insert(0, 50) 후의 리스트 : %s" %mylist)
+
+mylist.remove(50)
+print("remove(50) 후의 리스트 : %s" %mylist)
+
+mylist.extend([10, 0])
+print("extend([10, 0]) 후의 리스트 : %s" %mylist)
+
+print("요소 10의 갯수 : %d" %mylist.count(10))

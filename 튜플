@@ -1,0 +1,10 @@
+#튜플은 소괄호로 표시하고 편집할 수 없어 이 점이 리스트와의 차이점 ; 읽기 전용
+
+score = (88, 95, 70, 100, 99)
+
+sum = 0
+
+for s in score :
+    sum += s
+print("총점 :",sum)
+print("평균 :",sum / len(score))

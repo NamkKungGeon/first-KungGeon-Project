@@ -1,0 +1,20 @@
+#세트 ; 유일한 값만 나온다 ; 원소에 1, 2, 3, 3, 4 가 있으면 출력에는 3이 하나만 나온다!!
+
+mySet1 = {1, 2, 3, 4, 5}
+mySet2 = {4, 5, 6, 7}
+
+print("mySet1과 mySet2의 교집합 : ",mySet1 & mySet2) #교집합
+print("mySet1과 mySet2의 합집합 : ",mySet1 | mySet2) #합집합
+print("mySet1과 mySet2의 차집합 : ",mySet1 - mySet2) #차집합
+print("mySet1과 mySet2의 대칭 차집합 : ",mySet1 ^ mySet2) #대칭 차집합
+
+
+#연산자 &, |, -, ^ 가 아닌 다른 함수를 사용해서 교집합, 합집합, 차집합, 대칭 차집합을 구할 수 있다.
+
+mySet1 = {1, 2, 3, 4, 5}
+mySet2 = {4, 5, 6, 7}
+
+print(mySet1.intersection(mySet2))        #교집합
+print(mySet1.union(mySet2))               #합집합
+print(mySet1.difference(mySet2))          #차집합
+print(mySet1.symmetric_difference(mySet2)) #대칭 차집합

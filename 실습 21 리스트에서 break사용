@@ -1,0 +1,8 @@
+#반복문에서 리스트의 변수를 순서대로 입력시킨다.
+score = [92, 86, 68, 120, 56]
+
+for s in score :
+    if (s < 0 or s > 100) :
+        break
+    print(s)
+print("성적처리 끝")

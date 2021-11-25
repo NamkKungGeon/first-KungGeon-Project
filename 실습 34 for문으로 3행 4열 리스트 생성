@@ -1,0 +1,19 @@
+a, b, value = [], [], 1
+
+for i in range (0, 3) :
+    for j in range (0, 4) :
+        a.append(value)
+        value = value + 1
+
+    b.append(a)
+    a = []
+
+print("현재 b 리스트 출력 :",b)
+print()
+
+print(" b  1열 2열 3열 4열")
+for i in range (0, 3) :
+    print("%d행" %(i + 1), end = "")
+    for j in range (0, 4) :
+        print("%3d" %b[i][j], end = " ")
+    print()

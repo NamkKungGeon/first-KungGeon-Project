@@ -1,0 +1,64 @@
+counts, ch, name, number, email, sorting1, sorting2, sorting3, name_search, a, name_change, b, name_delete, c = 0, "", [], [], [], [], [], [], "", 0, "", 0, "", 0
+
+
+while (1) :
+    ch = input("명령어를 입력하세요 : ")
+
+    if ch == "add" :
+        name.append(input("새로운 이름 입력 : "))
+        number.append(input("번호 입력 :"))
+        email.append(input("메일 입력 : "))
+        counts += 1
+    
+    elif ch == "all" :
+        for i in range (0, counts) :
+            if name[i] > name[i + 1] :
+                sorting1[i] == name[i]
+                name[i] == name[i + 1]
+                name[i + 1] == sorting1[i]
+
+                sorting2[i] == number[i]
+                number[i] == number[i + 1]
+                number[i + 1] == sorting2[i]
+
+                sorting3[i] == email[i]
+                email[i] == email[i + 1]
+                email[i + 1] == sorting3[i]
+
+                print(name)
+                print(number)
+                print(email)
+
+    elif (ch != "add") and (ch != "all") :
+        name_search = ch.split()
+        if name_search[0] == "search" :
+            if name_search[1] in name :
+                a = name.index(name_search)
+                print(name[a])
+                print(number[a])
+                print(email[a])
+
+        else :
+            print("없는 이름입니다.")
+
+        elif name_search[0] == "change" :
+            name_change = input("정보 변경 이름 입력 : ")
+
+            if name_change in name :
+                b = name.index(name_change)
+                number[b] = input("바꿀 번호 입력 : ")
+                email[b] = input("바꿀 메일 입력 : ")
+
+            else :
+                print("없는 이름입니다.")
+
+        elif name_search[0] == "delete" :
+            name_delete = input("삭제할 이름 입력 : ")
+            c = name.index(name_delete)
+            name.pop(c)
+            number.pop(c)
+            email.pop(c)        
+
+    elif ch == "quit" :
+        print("프로그램 종료")
+        break

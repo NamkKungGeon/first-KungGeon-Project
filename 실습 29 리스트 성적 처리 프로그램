@@ -1,0 +1,17 @@
+STUDENTS, a, sum, avg, b = 5, [], 0, 0, 0 # 학생수, 빈 리스트, 총합, 평균, 80점 이상 받은 학생을 셈하기 위한 변수
+
+for i in range(STUDENTS) : #5개의 성적을 입력할 것임.
+    a.append(int(input("%d번 째 학생의 성적을 입력하세요 : " %(i + 1))))
+
+for i in range(STUDENTS) :
+    sum = sum + a[i]
+
+avg = sum / STUDENTS #연산자를 사용해 실수 범위까지 구한다.
+
+for i in range(STUDENTS) :
+    if a[i] >= 80 :
+        b = b + 1
+
+print()
+print("%d명의 성적 평균은 %3.1f점입니다." %(STUDENTS, avg)) #성적 평균을 유효 숫자 3개에 소숫점 아래 첫 번째 자리까지 표시하겠다.
+print("80점 이상 성적을 받은 학생은 %d명입니다." %b)

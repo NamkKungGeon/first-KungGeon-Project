@@ -1,0 +1,47 @@
+#사용할 변수 선언(할 필요는 없지만, 이렇게 하면 내가 사용할 변수를 쉽게 확인할 수 있음)
+A_name, B_name, C_name, A_age, B_age, c_age, A_score, B_score, C_score = [0] * 9
+
+A_name = input("A의 이름 : ")
+A_age = int(input("A의 나이 : "))
+A_score = float(input("A의 학점 : "))
+print()
+
+B_name = input("B의 이름 : ")
+B_age = int(input("B의 나이 : "))
+B_score = float(input("B의 학점 : "))
+print()
+
+C_name = input("C의 이름 : ")
+C_age = int(input("C의 나이 : "))
+C_score = float(input("C의 학점 : "))
+print()
+
+print("이름\t나이\t학점")
+print(A_name, A_age, A_score, sep = "\t")
+print(B_name, B_age, B_score, sep = "\t")
+print(C_name, C_age, C_score, sep = "\t")
+
+#나이의 평균과 학점의 평균
+Age_avg = (A_age + B_age + C_age) / 3
+Score_avg = (A_score + B_score + C_score) / 3
+
+#최고 나이를 가진 사람 찾는 조건문
+if (A_age > B_age) and (A_age > C_age) :
+    Top_age = A_name
+elif (B_age > A_age) and (B_age > C_age) :
+    Top_age = B_name
+elif (C_age > A_age) and (C_age > B_age) :
+    Top_age = C_name
+
+#최고 학점을 받은 사람 찾는 조건문
+if (A_score > B_score) and (A_score > C_score) :
+    Top_score = A_name
+elif (B_score > A_score) and (B_score > C_score) :
+    Top_score = B_name
+elif (C_score > A_score) and (C_score > B_score) :
+    Top_score = C_name
+
+print("평균 나이 : %3.1f" % Age_avg)
+print("평균 학점 : %2.1f" % Score_avg)
+print("최고 나이 :",Top_age)
+print("최고 학점 : ",Top_score)

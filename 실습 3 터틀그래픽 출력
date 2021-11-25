@@ -1,0 +1,56 @@
+#터틀 그래픽
+
+import turtle
+t = turtle.Pen()
+t.pencolor("yellow")
+
+t.forward(100)
+t.right(90)
+t.forward(100)
+t.right(90)
+t.forward(100)
+t.right(90)
+t.forward(100)
+
+#for문으로 같은 문장 반복 가능.
+for i in range (4) :
+    t.right(90)
+    t.forward(100)
+
+#while문으로 반복 횟수 조절 가능.
+a = 0
+while a != 20 :
+    t.right(90)
+    t.forward(100)
+    a += 1
+
+
+
+#초강에서 나온 마우스 입력을 통한 터틀 그래픽!!!
+
+    import turtle
+
+#함수 선언
+
+def Left_click(x,y) :
+    global r, g, b
+    turtle.pencolor((r, g, b))
+    turtle.pendown()
+    turtle.goto(x,y)
+
+def Right_click(x,y) :
+    turtle.penup()
+    turtle.goto(x,y)
+
+pSize = 10
+r, g, b = 0.0, 0.0, 0.0
+
+turtle.title("그림 그리기")
+turtle.shape("turtle")
+turtle.pensize(pSize)
+
+turtle.onscreenclick(Left_click,1)
+turtle.onscreenclick(Right_click,3)
+
+turtle.done()
+

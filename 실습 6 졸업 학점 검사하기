@@ -1,0 +1,14 @@
+All_score = int(input("이수한 학점수를 입력하시오 : "))
+Score_avg = float(input("평점을 입력하시오 : "))
+
+if (All_score >= 140) and (Score_avg) >= 2.0 :
+    print("졸업 가능")
+elif (All_score >= 140) and (Score_avg) < 2.0 :
+    print("졸업 불가")
+    print("사유 : 평점 미달")
+elif (All_score < 140) and (Score_avg) >= 2.0 :
+    print("졸업 불가")
+    print("사유 : 이수 학점 미달")
+else :
+    print("졸업 불가")
+    print("사유 : 이수 학점, 평점 미달")

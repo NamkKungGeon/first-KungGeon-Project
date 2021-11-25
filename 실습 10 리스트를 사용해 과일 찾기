@@ -1,0 +1,14 @@
+fruit = ["사과", "배", "딸기", "포도"]
+
+print(fruit)
+
+fruit.append("바나나")
+
+print(fruit)
+
+search = input("찾을 과일을 입력하세요 : ")
+
+if search in fruit :
+    print(search,"가 fruit 안에 있습니다.")
+else :
+    print(search,"가 fruit 안에 없습니다.")

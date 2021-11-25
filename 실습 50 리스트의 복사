@@ -1,0 +1,21 @@
+#리스트의 복사 ; 두 방식의 차이는 [:]가 있고 없고 차이다!
+
+# (1) 얕은 복사 ; 두 개의 리스트가 동일한 메모리를 공유함
+oldList = ["짜장면", "탕수육", "군만두"]
+newList = oldList
+print(newList)
+
+oldList[0] = "짬뽕"
+oldList.append("깐풍기")
+print(oldList)
+print(newList)
+
+# (2) 깊은 복사 ; 두 개의 리스트가 서로 다른 메모리를 가짐.
+oldList = ["짜장면", "탕수육", "군만두"]
+newList = oldList[:]
+print(newList)
+
+oldList[0] = "짬뽕"
+oldList.append("깐풍기")
+print(oldList)
+print(newList)

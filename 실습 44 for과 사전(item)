@@ -1,0 +1,4 @@
+scores = {"korean":80, "math":90, "english":80}
+
+for item in scores.items() :
+    print(item)

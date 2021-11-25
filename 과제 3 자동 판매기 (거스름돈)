@@ -1,0 +1,12 @@
+price = int(input("물건값을 입력하세요 : "))
+
+ten_thousand = int(input("지불할 천원짜리 지폐 개수 : "))
+
+changes = (ten_thousand * 1000) - price
+
+five_hundred_coin = changes // 500
+one_hundred_coin = (changes - (five_hundred_coin * 500)) // 100
+ten_coin = (changes - (five_hundred_coin * 500) - (one_hundred_coin * 100)) // 10
+one_coin = changes - (five_hundred_coin * 500) - (one_hundred_coin * 100) - (ten_coin * 10)
+
+print("500원 = ",five_hundred_coin,"100원 = ",one_hundred_coin,"10원 = ",ten_coin,"1원 = ",one_coin)

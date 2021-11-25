@@ -1,0 +1,39 @@
+#print("\u2605") ; 큰 별 / print("\u2665") ; 큰 하트 유니코드
+
+#마름모 모양 출력 (본인 작성)
+i = 1
+
+while i != 10 :
+    if i < 6 :
+        print(" " * (5 - i), "\u2605" * (2 * i - 1))
+    
+    if i > 5 and i < 10 :
+        print(" " * (i - 5), "\u2605" * (19 - 2 * i))
+    i = i + 1
+
+#ppt방법
+i, k = 0, 0
+
+while i < 9 :
+    if i < 5 :
+        k = 0
+        while k < 4 - i :
+            print(" ", end = "")
+            k = k + 1
+        k = 0
+
+        while k < i * 2 + 1 :
+            print("\u2605", end = "")
+
+            k = k + 1
+    else :
+        k = 0
+        while k < i - 4 :
+            print(" ", end = "")
+            k = k + 1
+        k = 0
+        while k < (9 - i) * 2 - 1 :
+            print("\u2605", end = "")
+            k = k + 1
+    print()
+    i = i + 1

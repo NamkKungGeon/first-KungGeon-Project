@@ -1,0 +1,73 @@
+#반복문을 사용하 되, 
+a, b = [], []
+
+for i in range (0, 199, 2) :
+    a.append(i)
+    b.append(198 - i)
+
+print(a)
+print(b)
+
+#빈 리스트 a, b를 생성한 후, 리스트 a에 0, 2, 4...198까지의 짝수를 초기화시킨다. 리스트 a를 역순으로 리스트 b에 넣기 위해서는 우선 리스트 b에 len(a)개 만큼의 공간을 확보해야 한다.
+a, b = [], []
+
+for i in range (0, 100) :
+    b.append(0)
+
+for i in range (0, 200, 2) :
+    a.append(i)
+
+for i in range (0, 100) :
+    b[i] = a[99 - i]
+
+print("리스트 a : ",a)
+print("리스트 b : ",b)
+
+#ppt 방식
+aa = []
+bb = []
+
+value = 0
+
+for i in range(0, 100) :
+    aa.append(value)
+    value = value + 2
+
+for i in range(0, 100) :
+    bb.append(aa[99 - i])
+
+print(aa)
+print(bb)
+
+
+; 여기서 알 수 있는 정보 : 빈 리스트를 생성했을 때, append로만 값을 추가할 수 있다.
+example
+c = [] #빈 리스트 c 생성
+c.append(원소) #가능
+c[0] = 원소 #불가능
+c[0] = input("블라블라") #불가능
+
+; C언어에서는 배열을 선언할 때, 크기를 선언하지 않아도 사용자가 원하는 만큼 값을 넣을 수 있었지만, 그에 대응되는 파이썬의 리스트에서는 append를 제외하고는 리스트의 크기를 선언해줘야 한다.
+
+#심심해서 만들어본 리스트 정렬
+example
+scores = []
+tmp = []
+
+for i in range (0, 1) :
+    tmp.append(0)
+
+for i in range(10) :
+    scores.append(int(input("성적을 입력하시오 : ")))
+print(scores)
+
+i = 0
+
+for i in range(i, 9) :
+    for j in range(0, 9) :
+        if (scores[j] > scores[j + 1]) :
+            tmp[0] = scores[j]
+            scores[j] = scores[j + 1]
+            scores[j + 1] = tmp[0]
+            i = i + 1
+print(scores)

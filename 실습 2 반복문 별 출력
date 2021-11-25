@@ -1,0 +1,20 @@
+#반복문을 통해 별의 갯수를 하나씩 늘리기
+
+for y in range (1, 10) :
+    for x in range(y) :
+        print("*", end = "")
+    print()
+
+
+
+
+#응용 ; C언어에서 했던 탑쌓기 프로그램 / 띄어쓰기를 어떻게 추가해야할 지 잘 모르겠음
+
+    stair = int(input("몇 층까지 쌓으시겠습니까 : "))
+
+real_stair = 2 * stair
+
+for x in range (1, real_stair, 2) :
+    for y in range(x) :
+        print("*", end = "")
+    print()

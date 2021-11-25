@@ -1,0 +1,46 @@
+friend = []
+number = []
+adress = []
+
+def J () : #줄바꿈
+    print()
+
+while True :
+    order = int(input("명령어 선택 :"))
+
+    if order == 1 : #연락처 리스트 출력
+        print(friend)
+        print(number)
+        print(adress)
+        J()
+
+    elif order == 2 : #연락처 추가
+        friend.append(input("친구추가 :"))
+        number.append(input("전화번호 추가 :"))
+        adress.append(input("주소 추가 :"))
+        J()
+
+    elif order == 3 : #연락처 삭제
+        friend.remove(input("친구삭제 :"))
+        number.remove(input("전화번호 삭제 :"))
+        adress.remove(input("주소 삭제 :"))
+        J()
+    
+    elif order == 4 : #연락처 변경
+        search = friend.index(input("변경할 이름 입력 :"))
+        friend.remove(friend[search])
+        friend.insert(search, input("추가할 이름 입력 :"))
+        J()
+
+        search = number.index(input("변경할 전화번호 입력 :"))
+        number.remove(number[search])
+        number.insert(search, input("추가할 전화번호 입력 :"))
+        J()
+        
+        search = adress.index(input("변경할 주소 입력 :"))
+        adress.remove(friend[search])
+        adress.insert(search, input("추가할 주소 입력 :"))
+        J()
+    
+    elif order == 9 : #종료
+        break

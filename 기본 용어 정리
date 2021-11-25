@@ -1,0 +1,231 @@
+#sep ; a와 b와 c를 출력 하되, 그 사이에 ""사이의 문자를 삽입해 출력한다.
+
+example
+print(a, b, c, sep = " d ")
+
+
+#end ; print()는 기본적으로 \n 기능을 가지고 있다. end를 쓰면 기본적으로 \n을 억제하고, 따옴표 안에 원하는 값을 넣어 마지막에 원하는 값을 넣을 수 있다.
+
+example
+for i in range(0, 10) :
+    print("*", end = "") 
+출력 ; **********
+
+
+#print() 함수를 사용한 다양한 출력
+
+example
+a = 10
+b = 20
+c = a / b , c = a * b , c = a - b 등등....
+
+print("%d / %d = %d % (a, b, c))
+print("%d * %d = %d % (a, b, c))
+print("%d - %d = %d % (a, b, c))
+
+
+#print() 함수를 사용한 깔끔한 출력
+
+example
+print("%d" % 123)  # 123
+print("%5d" % 123) # --123
+print("%05d" % 123) # 00123
+
+print("%f" % 123.45) # 123.45
+print("%7.1f" % 123.45) # ---123.5 ; 소숫점 자리를 건드릴 때, 원하는 자리 다음 숫자에 따라 올림이 될 수도 있고, 버림이 될 수도 있음 (반올림)
+print("%7.3f" % 123.45) # -123.450
+
+print("%s" % "Python") # Python
+print("%10s" % "Python") # ----Python
+
+
+#.format함수를 사용해 출력 순서를 지정할 수 있다.
+
+example
+print("{2:d} {1:d} {0:d}".format(100, 200, 300)) # 300, 200, 100
+
+
+# \n, \t, \b, \\, \', \" 여러가지 문자를 통해 원하는 서식 작성
+
+example
+print("첫 행입니다. \n 아래 행입니다.")     #줄바꿈
+print("첫 행입니다. \t 탭키를 눌렀습니다.") #탭키 ; 입력을 4개 단위로 끊는다. (1)입력이 3개 이하라면, 입력을 포함해 4칸을 띄우고, (1)입력이 4개 이상이라면 4개로 나눠 (1)을 실행한다.
+print("글자를 \'강조\'해볼까요?")          #''로 글자를 강조
+print("글자를 \"강조\"해볼까요?")          #""로 글자를 강조
+print("\\\\\\ 역슬래시 세 개 출력")        #역슬래시 세 개 출력
+print(r"\n \t \" \\를 그대로 출력")        #r을 사용해 그대로 출력 / r이라는 것은 뒤에 문자열을 그대로 출력해라라는 의미.
+
+
+# 진수 변환을 할 수 있다.
+
+example
+print(bin(11), bin(0o11), bin(0x11)) # 11을 2진수로, 8진수 11을 2진수로, 16진수 11을 2진수로
+
+print(oct(11), oct(0b11), oct(0x11)) # 11을 8진수로, 2진수 11을 8진수로, 16진수 11을 8진수로
+
+print(hex(11), hex(0b11), hex(0o11)) # 11을 16진수로, 2진수 11을 16진수로, 8진수 11을 16진수로
+
+example
+sel = int(input("입력 진수 결정(16/10/8/2) : "))
+
+num = input("값 입력 : ")
+
+if sel == 16 :
+    num10 = int(num, 16)
+if sel == 10 :
+    num10 = int(num, 10)
+if sel == 8 :
+    num10 = int(num, 8)
+if sel == 2 :
+    num10 = int(num, 2)
+
+print("16진수 = ", hex(num10))
+print("10진수 = ", num10)
+print("8진수 = ", oct(num10))
+print("2진수 = ", bin(num10))
+
+
+#제어 변수의 활용
+
+example
+range(50) = range(0, 50)
+range(0, 51, 5) = 0, 5, 10, 15, 20, 25, 30 ---- 50
+
+
+#while 문
+
+a = 0
+
+while a != 3 : #while 옆에 조건이 만족하는 이상 아래 코드를 계속 반복한다.
+    print("%d : 안녕하세요? while문을 공부중입니다." %a)
+    a = a + 1
+
+
+# append 를 사용해 리스트의 끝에 원하는 값을 추가할 수 있다.
+aa = []
+
+for i in range (100) :
+    aa.append(i)
+
+print(len(aa)) #리스트의 길이를 구할 수 있다. ; 리스트에 들어있는 변수의 갯수
+print(aa)      #선언한 리스트에 저장되어 있는 값들을 출력한다.
+
+#리스트 선언 방식
+example
+list1 = []                          # list1 = list() 와 같다.
+list2 = ["H", "e", "l", "l", "o"]   # list2 = list("Hello") 와 같다.
+list3 = [0, 1, 2, 3, 4]             # list3 = list(range(0, 4))
+
+; 문자 두개 이상의 결합으로 이루어진 요소를 저장할 수 있는 방법이 있을까? 물론 a.append("Hellow")인 방법이 있지만, list 함수를 가지고 추가하는 방법이 있을까?
+
+
+#리스트의 연산과 함수
+
+#append ; 끝값에 대입
+
+#insert ; 삽입이기 때문에 요소를 추가한 부분부터 끝까지 위치가 하나씩 밀린다.
+example
+list1.insert(위치, 값)
+
+#extend ; 원래 리스트 뒤에 새로운 리스트의 요소 모두 추가
+list_a = [1, 2, 3]
+list_a.extend([4, 5, 6])
+출력 ; list_a = [1, 2, 3, 4, 5, 6]
+
+
+#del / pop
+del list1[3:6] #범위를 지정해 리스트 요소를 한꺼번에 제거할 수 있다.
+del list1[0]   #특정값을 제거할 수 있다.
+list1.pop(2)   #특정 위치의 요소 하나를 제거할 수 있다.
+
+#remove(값) #특정값을 지정하여 제거할 수 있다. 주의사항!! 순서대로 찾다가 특정값을 찾으면 지우고 끝난다. 특정값의 모든 것을 지우는 것이 아님!!
+
+
+#clear() #리스트 내부의 요소를 모두 제거할 수 있다.
+
+#in list #특정 값이 리스트 내부에 있는지 확인
+<-> 값 not in list
+
+
+#index ; 특정 요소 위치 찾음 / count ; 특정 요소값의 개수 조사
+score = [88, 95, 70, 100, 99, 80, 78, 50]
+perfect = score.index(100)
+print("만점 받은 학생은 "+str(perfect)+ "번입니다.")
+pernum = score.count(100)
+print("만점자 수는 " +str(pernum)+ "명입니다.")
+
+# +를 사용하면 띄어쓰기가 안되고 ,를 쓰면 띄어쓰기가 자동으로 된다.
+
+
+# min / max ; 리스트 요소 중 최소값/최대값 찾기
+
+values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+min(values) ; 1
+max(values) ; 10
+
+
+
+#정렬
+
+sort ; 리스트 정렬하며 요소 순서 조정
+reverse ; 요소 순서 반대로 (반대로 정렬이 아니라는 것을 기억!!!!!)
+
+score = [1, 3, 5, 7, 2, 4, 6, 8]
+print(score)
+
+score.reverse()
+print(score)
+
+score.reverse()
+print(score)
+
+score.sort()
+print(score)
+
+score.reverse()
+print(score)
+
+sorted ; 기존의 리스트를 그대로 두고 정렬된 리스트를 새로운 리스트에 초기화시킨다.
+
+example
+aa = [3, 2, 1]
+
+bb = sorted(aa)
+
+print(aa) #[3, 2, 1]
+print(bb) #[1, 2, 3]
+
+
+#copy 메서드 ; 두 리스트를 완전히 독립 사본으로 만들 수 있다.
+
+list1 = [1, 2, 3]
+
+list2 = list1.copy()
+
+list2[1] = 100
+
+print(list1)
+print(list2)
+
+
+#튜플은 소괄호로 표시하고 편집할 수 없어 이 점이 리스트와의 차이점 ; 읽기 전용 ; 특정값 삭제, 추가를 제외한 모든 기능이 list와 동일하다.
+
+score = (88, 95, 70, 100, 99)
+
+sum = 0
+
+for s in score :
+    sum += s
+print("총점 :",sum)
+print("평균 :",sum / len(score))
+
+
+#딕셔너리 ; 쌍 2개가 하나로 묶인 자료구조 ; index라는 개념이 없다.
+; 키와 값은 사용자가 지정하는 것이지 규정은 없음. 주의사항!!! 딕셔너리에는 순서가 없어 생성한 순서대로 딕셔너리가 구성된다는 보장 x
+
+example
+dic1 = {1:"a", 2:"b", 3:"c"} // dic1 = {"a":1, "b":2, "c":3}
+print(dic1)
+
+

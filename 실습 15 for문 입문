@@ -1,0 +1,10 @@
+#반복 변수를 출력할 수 있다.
+for i in range(0, 3, 1) :
+    print("%d : 안녕하세요? for 문을 공부 중입니다." %i)
+
+#리스트에 있는 숫자를 차례로 출력한다.
+name = [9, 8, 7, 6]
+name.append(5)
+
+for i in name :
+    print("%d" %i)

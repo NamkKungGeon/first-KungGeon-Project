@@ -1,0 +1,39 @@
+#숫자 맞추기
+import random
+
+answer, number, i = 0, 0, 0 #정답, 입력값, 시도횟수
+
+answer = random.randint(1, 100) #반복문에서의 범위랑 다르다. (시작값, 끝값) 인 것을 기억하자!
+while True :
+    number = int(input("숫자를 입력하시오 : "))
+    i = i + 1
+
+    if answer > number :
+        print("up")
+    elif answer < number :
+        print("down")
+
+    if answer == number :
+        print("정답입니다. 답 : %d, 시도횟수 : %d" %(number, i))
+        break
+    
+
+#처음 만들었던 코드
+import random
+
+computer = random.randint (1, 100); 
+number = 0
+a = 0 #시도횟수
+
+while number != computer :
+    number = int(input("숫자를 맞춰 보세요 : "))
+    a += 1
+    if number == computer :
+      print("어케 맞춤?")
+    elif number > computer :
+     print("너무 큼!")
+    else :
+        print("너무 작음!")
+print("시도 횟수 :",a,)
+print("게임 종료")
+

@@ -1,0 +1,9 @@
+score = [88, 95, 70, 100, 99]
+
+sum = 0
+
+for s in score : #s는 리스트 score에 포함된 원소이고, 처음 원소부터 마지막 원소까지 반복하는 과정을 실행한다.
+    sum = sum + s
+
+print("총점 : ",sum)
+print("평균 : ",sum / len(score))
